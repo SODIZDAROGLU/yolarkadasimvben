@@ -1,5 +1,5 @@
 
-$(document).ready(function () {
+$(function () {
     var gameId;
     var world = $('.world');
     var world2 = $('.world2');
@@ -8,7 +8,7 @@ $(document).ready(function () {
     var gameOver = false;
 
 
-    startButton.click(function () {
+    startButton.on("click",function () {
         gameOver = false;
         startButton.prop('disabled', true); // Disable the START button
         var game = function () {
@@ -30,7 +30,7 @@ $(document).ready(function () {
                 var randomMovement2 = Math.floor(Math.random() * 3) + 1;
                 world2.css('left', iteration2 + randomMovement2);
                 world.css('left', iteration1 + randomMovement1);
-                console.log(randomMovement1)
+                
             }
 
             gameId = requestAnimationFrame(game);
@@ -42,7 +42,7 @@ $(document).ready(function () {
     function stopGame() {
         if (gameId) {
             cancelAnimationFrame(gameId);
-            console.log(gameId)
+          
             gameId = null;
         }
     }
