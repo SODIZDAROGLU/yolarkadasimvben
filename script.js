@@ -26,8 +26,8 @@ $(function () {
             if (collision(world, pipe) || collision(world2, pipe)  ) {
                 gameOver = true;
             } else {
-                var randomMovement1 = Math.floor(Math.random() * 3) + 1;
-                var randomMovement2 = Math.floor(Math.random() * 3) + 1;
+                var randomMovement1 = Math.floor(Math.random() * 1) + 1;
+                var randomMovement2 = Math.floor(Math.random() * 1) + 1;
                 world2.css('left', iteration2 + randomMovement2);
                 world.css('left', iteration1 + randomMovement1);
                 
